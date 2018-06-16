@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}首页{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block content1 %}
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Title</title>
+     <meta charset="UTF-8">
+    <!-- Iconos -->
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../static/css/leftnav.css" media="screen" type="text/css"/>
+</head>
+ <body>
+ <!-- Contenedor -->
+    <div class="account-l fl">
+        <a class="list-title">账户概览</a>
+        <ul id="accordion" class="accordion">
+            <li>
+                <div class="link"><i class="fa fa-file-text"></i>购物管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="concernshop"><a>已关注的店铺</a></li>
+                    <li id="concerngood"><a>已关注的商品</a></li>
+                    <li id="myorder"><a>我的订单</a></li>
+                    <li id="myrefund"><a>退款申请</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="link"><i class="fa fa-unlock-alt"></i>安全管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="basecomInfo"><a>基本信息</a></li>
+                    <li id="authenchange"><a>认证信息</a></li>
+                    <li id="phoneAuth"><a>手机认证</a></li>
+                    <li id="bankCardAuth"><a>银行卡认证</a></li>
+                    <li id="emailAuth"><a>邮箱认证</a></li>
+                    <li id="passwordmodify"><a>密码修改</a></li>
+                    <li id="paymentpsdmodify"><a>支付密码</a></li>
+                    <li id="address"><a>收货地址</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-star"></i>评价管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="usercomments"><a>我的评价</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-bell"></i>消息管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="mymsg"><a>我的消息</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <script src='../static/js/leftnav.js'></script>
+    </div>
+ </body>
+</html>
+{% endblock %}
+{% block content2 %}
+<script type="text/javascript">
+var curIndex=0;
+//时间间隔(单位毫秒)，每秒钟显示一张，数组共有5张图片放在Photos文件夹下。
+var timeInterval=1500;
+var arr=new Array();
+arr[0]='static/images/main1.png';
+arr[1]='static/images/main2.png';
+arr[2]='static/images/main3.png';
+arr[3]='static/images/main4.png';
+arr[4]='static/images/main5.png';
+
+setInterval(changeImg,timeInterval);
+function changeImg()
+{
+    var obj=document.getElementById("obj");
+    if (curIndex==arr.length-1)
+    {
+        curIndex=0;
+    }
+    else
+    {
+        curIndex+=1;
+    }
+    obj.src=arr[curIndex];
+}
+</script>
+        <div>
+            <img id=obj src='static/images/main1.png' width=765 height=350 border =0>
+        </div>
+{% endblock %}
+{% block girlclose %}
+    <table>
+    <tr style="height: 5px">
+        <td><h style="color: #f39800;font-size: 22px">女装</h></td>
+        <td><h style="color:black;font-size: 18px;margin-left: 25px;">
+                <a href="#" style="padding: 5px;">印花T恤</a> |
+                <a style="padding: 5px;">打底裤</a> |
+                <a style="padding: 5px">爆款套装 </a>|
+                <a style="padding: 5px">连帽卫衣</a> |
+                <a style="padding: 5px">设计师衬衫</a> |
+            </h>
+        </td>
+    </tr>
+    </table>
+{% endblock %}
+{% block girlclose1 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/gir1.png') }}">
+    </a>
+{% endblock %}
+{% block girlclose2 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/girl2.png') }}">
+    </a>
+{% endblock %}
