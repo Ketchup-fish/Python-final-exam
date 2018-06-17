@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+{% block title %}首页{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block content1 %}
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Title</title>
+     <meta charset="UTF-8">
+    <!-- Iconos -->
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../static/css/leftnav.css" media="screen" type="text/css"/>
+</head>
+ <body>
+ <!-- Contenedor -->
+    <div class="account-l fl">
+        <a class="list-title">账户概览</a>
+        <ul id="accordion" class="accordion">
+            <li>
+                <div class="link"><i class="fa fa-file-text"></i>购物管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="concernshop"><a>已关注的店铺</a></li>
+                    <li id="concerngood"><a>已关注的商品</a></li>
+                    <li id="myorder"><a>我的订单</a></li>
+                    <li id="myrefund"><a>退款申请</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="link"><i class="fa fa-unlock-alt"></i>安全管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="basecomInfo"><a>基本信息</a></li>
+                    <li id="authenchange"><a>认证信息</a></li>
+                    <li id="phoneAuth"><a>手机认证</a></li>
+                    <li id="bankCardAuth"><a>银行卡认证</a></li>
+                    <li id="emailAuth"><a>邮箱认证</a></li>
+                    <li id="passwordmodify"><a>密码修改</a></li>
+                    <li id="paymentpsdmodify"><a>支付密码</a></li>
+                    <li id="address"><a>收货地址</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-star"></i>评价管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="usercomments"><a>我的评价</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-bell"></i>消息管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li id="mymsg"><a>我的消息</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+        <script src='../static/js/leftnav.js'></script>
+    </div>
+ </body>
+</html>
+{% endblock %}
+{% block content2 %}
+<script type="text/javascript">
+var curIndex=0;
+//时间间隔(单位毫秒)，每秒钟显示一张，数组共有5张图片放在Photos文件夹下。
+var timeInterval=1500;
+var arr=new Array();
+arr[0]='static/images/main1.png';
+arr[1]='static/images/main2.png';
+arr[2]='static/images/main3.png';
+arr[3]='static/images/main4.png';
+arr[4]='static/images/main5.png';
+
+setInterval(changeImg,timeInterval);
+function changeImg()
+{
+    var obj=document.getElementById("obj");
+    if (curIndex==arr.length-1)
+    {
+        curIndex=0;
+    }
+    else
+    {
+        curIndex+=1;
+    }
+    obj.src=arr[curIndex];
+}
+</script>
+        <div>
+            <img id=obj src='static/images/main1.png' width=765 height=350 border =0>
+        </div>
+{% endblock %}
+{#女装#}
+{% block girlclose %}
+    <table>
+    <tr style="height: 5px">
+        <td><h style="font-size: 22px">女装</h></td>
+        <td><h style="color:black;font-size: 18px;margin-left: 25px;">
+                <a href="#" style="padding: 5px;">印花T恤</a> |
+                <a href="#" style="padding: 5px;">打底裤</a> |
+                <a href="#" style="padding: 5px">爆款套装 </a>|
+                <a href="#" style="padding: 5px">连帽卫衣</a> |
+                <a href="#" style="padding: 5px">设计师衬衫</a> |
+            </h>
+        </td>
+    </tr>
+    </table>
+{% endblock %}
+{% block girlclose1 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/gir1.png') }}">
+    </a>
+{% endblock %}
+{% block girlclose2 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/girl2.png') }}">
+     <h style="font-size: 15px">实拍2018夏装新品韩版复古棉麻V领衬衫+高腰显瘦...
+         ¥59.5</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/girl6.png') }}">
+         <h style="font-size: 15px">2018新款夏装微透防晒衫...¥59</h>
+        </a>
+    </div>
+{% endblock %}
+{% block girlclose3 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/girl3.png') }}">
+    <h style="font-size: 15px">2018夏季新款学生高腰显瘦宽松九分阔腿裤工装连衣...
+         ¥79.5</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/girl7.png') }}">
+         <h style="font-size: 15px">2018夏季女清新平底鞋...¥59</h>
+        </a>
+    </div>
+{% endblock %}
+{% block girlclose4 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/girl4.png') }}">
+    <h style="font-size: 15px">夏季新款韩范清新文艺雪纺精致连衣裙显瘦款a字短裙...
+     ¥79</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/girl8.png') }}">
+         <h style="font-size: 15px">2018时尚百搭雪纺衫女...¥49</h>
+        </a>
+    </div>
+{% endblock %}
+{% block girlclose5 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/girl5.png') }}">
+    <h style="font-size: 15px">2018夏季新款学院清新菠萝印花连衣裙+露肩连体短裤...
+    ¥78</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/girl9.png') }}">
+         <h style="font-size: 15px">可爱长款猫咪吊坠钱包...¥33.8</h>
+        </a>
+    </div>
+{% endblock %}
+{#男装#}
+{% block boyclose %}
+    <table>
+    <tr style="height: 5px">
+        <td><h style="font-size: 22px">男装</h></td>
+        <td><h style="color:black;font-size: 18px;margin-left: 25px;">
+                <a href="#" style="padding: 5px;">潮男T恤 </a> |
+                <a href="#" style="padding: 5px;">卫衣</a> |
+                <a href="#" style="padding: 5px">潮鞋 </a>|
+                <a href="#" style="padding: 5px">休闲裤</a> |
+                <a href="#" style="padding: 5px">万能衬衫</a> |
+            </h>
+        </td>
+    </tr>
+    </table>
+{% endblock %}
+{% block boyclose1 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/boy1.png') }}">
+    </a>
+{% endblock %}
+{% block boyclose2 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/boy2.png') }}">
+     <h style="font-size: 15px">夏季日系条纹宽松t恤潮流衣服男装...
+         ¥79</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/boy6.png') }}">
+         <h style="font-size: 15px">2018春夏季新款运动鞋...¥158</h>
+        </a>
+    </div>
+{% endblock %}
+{% block boyclose3 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/boy3.png') }}">
+    <h style="font-size: 15px">2018夏季新款港风宽松潮流衣服半袖¥49...
+         ¥49</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/boy7.png') }}">
+         <h style="font-size: 15px">2018新款凉鞋男沙滩拖鞋...¥79</h>
+        </a>
+    </div>
+{% endblock %}
+{% block boyclose4 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/boy4.png') }}">
+    <h style="font-size: 15px">夏季韩版半袖衣服男装打底衫...
+     ¥49</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/boy8.png') }}">
+         <h style="font-size: 15px">学生休闲鞋运动板鞋球鞋...¥64.35</h>
+        </a>
+    </div>
+{% endblock %}
+{% block boyclose5 %}
+    <a href="#">
+        <img src="{{ url_for('static',filename='images/boy5.png') }}">
+    <h style="font-size: 15px">夏季情侣装文艺学生个性字母圆领短袖...
+        ¥49</h>
+    </a>
+    <div style="margin-top: 15px">
+        <a href="#">
+            <img src="{{ url_for('static',filename='images/boy9.png') }}">
+         <h style="font-size: 15px">字母印花帆布鞋男小白鞋...¥59</h>
+        </a>
+    </div>
+{% endblock %}
+{% block bottom %}
+    <div>
+        <p style="font-size: 40px;padding-bottom: 40px">--------------------------------END---------------------------------</p>
+    </div>
+    <div style="font-size: 15px;color: #9b9b9b;margin-left: 10px;padding-bottom: 40px">
+        友情链接：
+        <a href="https://www.jd.com/" style="margin-left: 40px">京东商城</a>
+        <a href="https://www.taobao.com/" style="margin-left: 40px">淘宝网</a>
+        <a href="http://www.mogujie.com/" style="margin-left: 40px">蘑菇街</a>
+    </div>
+    <div  style="font-size: 15px;color: #9b9b9b">
+        <a href="#" style="margin-left: 10px">关于我们</a>
+        <a href="#" style="margin-left: 40px">招聘信息</a>
+        <a href="#" style="margin-left: 40px">联系我们</a>
+        <a href="#" style="margin-left: 40px">商家入驻</a>
+        <a href="#" style="margin-left: 40px">商家后台</a>
+        <a href="#" style="margin-left: 40px">信息举报</a>
+    </div>
+{% endblock %}
