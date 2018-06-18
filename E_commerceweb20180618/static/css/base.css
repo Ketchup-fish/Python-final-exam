@@ -1,0 +1,40 @@
+.logo{
+    width: 86px;
+    margin-top: -30px;
+}
+body{
+    background: #f3f3f3;
+}
+.container{
+    margin-top: 12px;
+    height: 72px;
+    font-size: 15px;
+}
+
+
+.content1{
+    width: 200px;
+    height: 350px;
+}
+.content2{
+    width: 765px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 200px;
+}
+.main{
+    background: #fff;
+    width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px;
+}
+.page-title{
+    text-align: center;
+}
+.bottom{
+    color: #9b9b9b;
+}
+/*.girlclose{*/
+/*height: 10px;*/
+/*}*/
