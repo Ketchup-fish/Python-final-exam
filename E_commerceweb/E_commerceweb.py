@@ -172,4 +172,4 @@ def my_context_processor():
 
 # before_request -> 视图函数 -> context_processor
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
