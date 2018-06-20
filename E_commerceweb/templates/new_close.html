@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}问答交流{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+{% endblock %}
+{% block main %}
+    <ul class="close-list-group">
+        {% for close in closes %}
+        <li>
+            <div class="avatar-group">
+                <img src="{{ url_for('static',filename='images/'+close.img) }}"
+                                          height="295px" width="192px">
+            </div>
+            <div class="close-group" style="margin-left: 200px;font-size: 15px">
+                <p class="close-title">商品名称：<a href="{{ url_for('detail_close',
+                close_id=close.id) }}">{{ close.close_name }}</a></p>
+                <p class="close-content">商品描述：{{ close.content }}</p>
+                <p class="close-content">商品售价：￥{{ close.close_price }}</p>
+                <p class="close-num">库存：{{ close.num }}</p>
+                <p class="close-author">发布者：{{ close.author.username }}</p>
+                <p class="close-time">发布时间：{{ close.create_time }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
